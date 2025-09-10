@@ -39,4 +39,4 @@ If you only want to do the second part of the project (`predictions.ipynb`) you 
 
 ## Next Steps
 
-Currently, the functionality of this project is for retrospective match prediction. A predictive match model would be next.
+Currently, the functionality of this project is for retrospective match prediction. Stay tuned for a predictive match model.
