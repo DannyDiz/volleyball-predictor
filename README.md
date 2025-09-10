@@ -15,7 +15,7 @@ This project was inspired by the football matches predictor project [here](https
 File overview:
 
 * `scraper.py` - a python file that scrapes our data.
-* `predictions.ipynb` - a Jupyter notebook that makes predictions.
+* `prediction.ipynb` - a Jupyter notebook that makes predictions.
 
 # Local Setup
 
@@ -35,7 +35,7 @@ To follow this project, please install the following locally:
 
 We'll be scraping [Volleyball World](https://en.volleyballworld.com/) to get our data in the first part of this project (`scraper.py`).
 
-If you only want to do the second part of the project (`predictions.ipynb`) you can download `VNL_mens_stats.csv`.
+If you only want to do the second part of the project (`prediction.ipynb`) you can download `VNL_mens_stats.csv`.
 
 ## Next Steps
 
