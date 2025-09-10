@@ -37,6 +37,6 @@ We'll be scraping [Volleyball World](https://en.volleyballworld.com/) to get our
 
 If you only want to do the second part of the project (`prediction.ipynb`) you can download `VNL_mens_stats.csv`.
 
-## Next Steps
+# Next Steps
 
 Currently, the functionality of this project is for retrospective match prediction. Stay tuned for a predictive match model.
