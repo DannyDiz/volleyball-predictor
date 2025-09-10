@@ -11,16 +11,11 @@ import numpy as np
 service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service)
 
-# List of URLs to scrape
+# TODO: fix automation to run for multiple weeks of matches. currently have to scrape one week of matches at a time
 urls = [
-    # "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/schedule/#fromDate=2025-06-08&gender=men&undefined=men",
-    # "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/schedule/#fromDate=2025-06-15&gender=men&undefined=men",
-    # "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/schedule/#fromDate=2025-06-22&gender=men&undefined=men",
-    # "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/schedule/#fromDate=2025-06-29&gender=men&undefined=men",
-    "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/schedule/#fromDate=2025-07-13&gender=men&undefined=men"#,
-    # "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/schedule/#fromDate=2025-07-20&gender=men&undefined=men",
-    # "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/schedule/#fromDate=2025-07-27&gender=men&undefined=men",
-    # "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/schedule/#fromDate=2025-08-03&gender=men&undefined=men"
+    # "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/2022/schedule/#fromDate=2022-06-05&gender=men",
+    # "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/2022/schedule/#fromDate=2022-06-12&gender=men",
+    "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/2022/schedule/#fromDate=2022-06-19&gender=men"
 ]
 
 match_urls = []
@@ -50,11 +45,11 @@ for url in match_urls:
     driver.implicitly_wait(10)
 
     mid = int(driver.find_element(By.CLASS_NAME, "vbw-match-header").get_attribute("data-match-no"))
-    teamA = driver.find_element(By.CLASS_NAME, "vbw-mu__team--home").get_attribute("textContent")[:-3] #.get_attribute("textContent")[:-3]
-    teamB = driver.find_element(By.CLASS_NAME, "vbw-mu__team--away").get_attribute("textContent")[:-3] #.get_attribute("textContent")[:-3]
+    teamA = driver.find_element(By.CLASS_NAME, "vbw-mu__team--home").get_attribute("textContent")[:-3]
+    teamB = driver.find_element(By.CLASS_NAME, "vbw-mu__team--away").get_attribute("textContent")[:-3]
     print("match ", mid, ": ", teamA, " vs ", teamB)
     
-    score = driver.find_element(By.CLASS_NAME, "vbw-mu__score").get_attribute("textContent") #.get_attribute("textContent") then splice the string
+    score = driver.find_element(By.CLASS_NAME, "vbw-mu__score").get_attribute("textContent")
     scoreA = int(score[0])
     scoreB = int(score[-1])
     resA = "W"
@@ -63,7 +58,7 @@ for url in match_urls:
         resA = "L"
         resB = "W"
 
-    sets = driver.find_elements(By.CLASS_NAME, "vbw-mu__sets--result")[:5] #.get_attribute("textContent") then splice the string
+    sets = driver.find_elements(By.CLASS_NAME, "vbw-mu__sets--result")[:5]
     set_scores = []
     for s in sets:
         scores = s.get_attribute("textContent")
