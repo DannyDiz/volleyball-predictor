@@ -2,7 +2,7 @@
 
 In this project, we'll predict the winner of international volleyball matches.  
 
-**Project Details*
+**Project Details**
 
 * Scrape match data using Selenium and pandas.  
 * Make predictions about who will win a match using scikit-learn.
