@@ -4,9 +4,10 @@ In this project, we'll predict the winner of international volleyball matches.
 
 **Project Details**
 
-* Scrape match data using Selenium and pandas.  
-* Make predictions about who will win a match using scikit-learn.
-* Measure error and improve predictions.
+* Scrape match data from Volleyball World using Selenium and pandas.
+* Build features like rolling averages to capture team performance trends.
+* Train a Random Forest model to predict match outcomes using scikit-learn.
+* Use the trained model to simulate and predict winners of future matches.
 
 ## Code
 
@@ -14,8 +15,8 @@ This project was inspired by the football matches predictor project [here](https
 
 File overview:
 
-* `scraper.py` - a python file that scrapes our data.
-* `prediction.ipynb` - a Jupyter notebook that makes predictions.
+* `scraper.py` - Scrapes match data and stores it in a structured format.
+* `prediction.ipynb` - Processes data, builds rolling averages, and trains the machine learning model.
 
 # Local Setup
 
@@ -35,8 +36,4 @@ To follow this project, please install the following locally:
 
 We'll be scraping [Volleyball World](https://en.volleyballworld.com/) to get our data in the first part of this project (`scraper.py`).
 
-If you only want to do the second part of the project (`prediction.ipynb`) you can download `VNL_mens_stats.csv`.
-
-# Next Steps
-
-Currently, the functionality of this project is for retrospective match prediction. Stay tuned for a predictive match model.
+If you only want to do the second part of the project (`prediction.ipynb`) you can download `mens_stats.csv`.
